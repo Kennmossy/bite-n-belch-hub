@@ -149,7 +149,7 @@ export const products: Product[] = [
     name: "Mini Small Chops Pack",
     category: "Small Chops",
     price: "from N5,000",
-    description: "A compact pack for small gatherings and家 movie nights.",
+    description: "A compact pack for small gatherings and movie nights.",
     image: smallChops,
     badge: "Budget-Friendly",
   },
