@@ -35,7 +35,7 @@ function MenuPage() {
       />
 
       <section className="pb-16 sm:pb-20">
-        <Tabs defaultValue={productCategories[0]}>
+        <Tabs defaultValue="Cakes">
           <div className="sticky top-16 z-30 border-b border-border bg-cream/95 backdrop-blur">
             <div className="container-page">
               <TabsList className="h-auto w-full justify-start gap-1 overflow-x-auto bg-transparent p-0">
