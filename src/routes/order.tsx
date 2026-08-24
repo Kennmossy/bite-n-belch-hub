@@ -55,10 +55,10 @@ function OrderPage() {
     const phone = String(data.get("phone") ?? "").trim();
     const date = String(data.get("deliveryDate") ?? "").trim();
 
-    if (name.length < 2) next.fullName = "Please enter your full name.";
-    if (!/^[0-9+\s-]{7,}$/.test(phone)) next.phone = "Please enter a valid phone number.";
-    if (!product) next.product = "Please choose a product or category.";
-    if (!date) next.deliveryDate = "Please choose a delivery date.";
+    if (name.length < 2) next["fullName"] = "Please enter your full name.";
+    if (!/^[0-9+\s-]{7,}$/.test(phone)) next["phone"] = "Please enter a valid phone number.";
+    if (!product) next["product"] = "Please choose a product or category.";
+    if (!date) next["deliveryDate"] = "Please choose a delivery date.";
 
     setErrors(next);
     if (Object.keys(next).length === 0) {
@@ -138,15 +138,15 @@ function OrderPage() {
               <div>
                 <Label htmlFor="fullName">Full Name</Label>
                 <Input id="fullName" name="fullName" className="mt-1.5" placeholder="Your full name" />
-                {errors.fullName ? (
-                  <p className="mt-1 text-xs text-destructive">{errors.fullName}</p>
+                {errors["fullName"] ? (
+                  <p className="mt-1 text-xs text-destructive">{errors["fullName"]}</p>
                 ) : null}
               </div>
               <div>
                 <Label htmlFor="phone">Phone Number</Label>
                 <Input id="phone" name="phone" inputMode="tel" className="mt-1.5" placeholder="080 0000 0000" />
-                {errors.phone ? (
-                  <p className="mt-1 text-xs text-destructive">{errors.phone}</p>
+                {errors["phone"] ? (
+                  <p className="mt-1 text-xs text-destructive">{errors["phone"]}</p>
                 ) : null}
               </div>
               <div>
@@ -183,8 +183,8 @@ function OrderPage() {
                     ))}
                   </SelectContent>
                 </Select>
-                {errors.product ? (
-                  <p className="mt-1 text-xs text-destructive">{errors.product}</p>
+                {errors["product"] ? (
+                  <p className="mt-1 text-xs text-destructive">{errors["product"]}</p>
                 ) : null}
               </div>
               <div>
@@ -205,8 +205,8 @@ function OrderPage() {
               <div>
                 <Label htmlFor="deliveryDate">Delivery Date</Label>
                 <Input id="deliveryDate" name="deliveryDate" type="date" className="mt-1.5" />
-                {errors.deliveryDate ? (
-                  <p className="mt-1 text-xs text-destructive">{errors.deliveryDate}</p>
+                {errors["deliveryDate"] ? (
+                  <p className="mt-1 text-xs text-destructive">{errors["deliveryDate"]}</p>
                 ) : null}
               </div>
               <div>

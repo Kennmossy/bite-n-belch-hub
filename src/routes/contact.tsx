@@ -40,9 +40,9 @@ function ContactPage() {
     const name = String(data.get("name") ?? "").trim();
     const email = String(data.get("email") ?? "").trim();
     const message = String(data.get("message") ?? "").trim();
-    if (name.length < 2) next.name = "Please enter your name.";
-    if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email)) next.email = "Please enter a valid email.";
-    if (message.length < 10) next.message = "Please tell us a little more.";
+    if (name.length < 2) next["name"] = "Please enter your name.";
+    if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email)) next["email"] = "Please enter a valid email.";
+    if (message.length < 10) next["message"] = "Please tell us a little more.";
     setErrors(next);
     if (Object.keys(next).length === 0) {
       setSent(true);
@@ -131,22 +131,22 @@ function ContactPage() {
                 <div>
                   <Label htmlFor="name">Name</Label>
                   <Input id="name" name="name" className="mt-1.5" placeholder="Your full name" />
-                  {errors.name ? (
-                    <p className="mt-1 text-xs text-destructive">{errors.name}</p>
+                  {errors["name"] ? (
+                    <p className="mt-1 text-xs text-destructive">{errors["name"]}</p>
                   ) : null}
                 </div>
                 <div>
                   <Label htmlFor="email">Email</Label>
                   <Input id="email" name="email" type="email" className="mt-1.5" placeholder="you@example.com" />
-                  {errors.email ? (
-                    <p className="mt-1 text-xs text-destructive">{errors.email}</p>
+                  {errors["email"] ? (
+                    <p className="mt-1 text-xs text-destructive">{errors["email"]}</p>
                   ) : null}
                 </div>
                 <div>
                   <Label htmlFor="message">Message</Label>
                   <Textarea id="message" name="message" rows={5} className="mt-1.5" placeholder="How can we help?" />
-                  {errors.message ? (
-                    <p className="mt-1 text-xs text-destructive">{errors.message}</p>
+                  {errors["message"] ? (
+                    <p className="mt-1 text-xs text-destructive">{errors["message"]}</p>
                   ) : null}
                 </div>
                 <button
