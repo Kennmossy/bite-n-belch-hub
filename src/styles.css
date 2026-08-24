@@ -93,6 +93,19 @@
 }
 
 @layer base {
+  [data-reveal] {
+    opacity: 0;
+    transform: translateY(24px);
+    transition:
+      opacity 600ms ease-out,
+      transform 600ms ease-out;
+  }
+
+  [data-reveal="in"] {
+    opacity: 1;
+    transform: none;
+  }
+
   * {
     border-color: var(--color-border);
   }
@@ -130,19 +143,6 @@
 
 @utility gradient-hero {
   background-image: var(--gradient-hero);
-}
-
-@utility reveal {
-  opacity: 0;
-  transform: translateY(24px);
-  transition:
-    opacity 600ms ease-out,
-    transform 600ms ease-out;
-}
-
-@utility reveal-in {
-  opacity: 1;
-  transform: none;
 }
 
 @utility gold-rule {
