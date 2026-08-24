@@ -38,7 +38,8 @@ export function Reveal({ children, className, delay = 0, as = "div" }: RevealPro
   return (
     <Tag
       ref={ref as never}
-      className={cn("reveal", visible && "reveal-in", className)}
+      data-reveal={visible ? "in" : "out"}
+      className={cn(className)}
       style={{ transitionDelay: `${delay}ms` }}
     >
       {children}
